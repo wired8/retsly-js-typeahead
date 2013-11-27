@@ -5,16 +5,19 @@
   "version": "0.0.1",
   "keywords": [],
   "dependencies": {
-    "Retsly/retsly-js-sdk": "*"
+
   },
+  "local": [
+    "retsly-js-sdk"
+  ],
   "development": {},
   "license": "MIT",
   "main": "index.js",
   "scripts": [
     "index.js",
-    "template.js"
+    "templates/template.js"
   ],
   "styles": [
-    "retsly-js-typeahead.css"
+    "style.css"
   ]
 }
