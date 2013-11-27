@@ -1,30 +1,49 @@
 
-//var autocomplete = require('autocomplete');
+var $ = require('jquery')
+  , _ = require('underscore')
+  , autocomplete = require('autocomplete');
 
 module.exports = exports = function(retsly) {
-/*
- *
- *  return function(el) {
- *
- *    var url = [
- *      'https://',
- *      retsly.host,
- *      '/api/v1/vendor',
- *      '?client_id='+retsly.client_id,
- *      '&access_token='+retsly.getToken()
- *    ].join('');
- *
- *    autocomplete(el, url)
- *      .parse(function(res) {
- *        console.log(res);
- *        return res;
- *
- *      })
- *      .key('name')
- *      .on('select', function(res) {
- *        console.log(res);
- *      });
- *  }
- */
+
+  return function(el, url, query, regex, key, cb) {
+
+    if(!$(el).length)
+      throw new Error('retsly-js-typeahead could not find the element.');
+
+    params = (typeof params === 'undefined') ? {} : params;
+
+    var url = [
+      'https://',retsly.getHost(), url,
+    ].join('');
+
+    var ac = autocomplete($(el)[0], function(name, acb) {
+      retsly.get(url, getQuery(name), function(res) {
+        acb( _.map(res.bundle, function(v) { return v[key] }) );
+      });
+    });
+
+    $(ac.el).on('click', 'a', function(evt) {
+      evt.preventDefault();
+      evt.stopPropagation();
+
+      if(typeof cb === 'function') {
+        var q = getQuery( $(el).val() );
+        q.limit = 1;
+        retsly.get(url, q, function(res) {
+          cb(res.bundle[0]);
+        });
+      }
+    });
+
+    function getQuery(val) {
+      query.$or = [];
+      _.each(regex, function(r) {
+        var x = {};
+        x[r] = { $regex: val, $options: 'i' };
+        query.$or.push(x);
+      });
+      return query;
+    }
+  }
 
 }

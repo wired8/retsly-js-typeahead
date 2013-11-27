@@ -5,7 +5,9 @@
   "version": "0.0.1",
   "keywords": [],
   "dependencies": {
-
+    "components/jquery": "1.10.2",
+    "stagas/autocomplete": "*",
+    "jashkenas/underscore": "*"
   },
   "local": [
     "retsly-js-sdk"
