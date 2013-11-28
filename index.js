@@ -54,7 +54,17 @@ module.exports = exports = function(retsly) {
 
     var ac = autocomplete(this.el, function(name, acb) {
       retsly.get(_this.u, _this.getQuery(name), function(res) {
-        acb( _.map(res.bundle, function(v) { return v[_this.d] }) );
+        acb(
+          _.map(res.bundle, function(v) {
+            if(typeof _this.d === 'string')
+              return v[_this.d]
+            if(typeof _this.d === 'object') {
+              return _.map(_this.d, function(x) {
+                return v[x];
+              }).join(' ');
+            }
+          })
+        );
       });
     });
 
