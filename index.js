@@ -43,42 +43,36 @@ module.exports = exports = function(retsly) {
     return this.q;
   }
 
-  Typeahead.prototype.display = function(d) {
-    this.d = d;
+  Typeahead.prototype.template = function(t) {
+    this.t = t;
     return this;
   };
 
   Typeahead.prototype.run = function() {
 
     var _this = this;
+    var t = _.template(this.t);
 
-    var ac = autocomplete(this.el, function(name, acb) {
+    this.ac = autocomplete(this.el, function(name, acb) {
       retsly.get(_this.u, _this.getQuery(name), function(res) {
-        acb(
-          _.map(res.bundle, function(v) {
-            if(typeof _this.d === 'string')
-              return v[_this.d]
-            if(typeof _this.d === 'object') {
-              return _.map(_this.d, function(x) {
-                return v[x];
-              }).join(' ');
-            }
-          })
-        );
+        _.each(res.bundle, function(i) {
+          _this.ac.add( t(i), i );
+        });
       });
     });
 
-    $(ac.el).on('click', 'a', function(evt) {
-      evt.preventDefault();
-      evt.stopPropagation();
-
+    this.ac.on('select', function(e) {
       if(typeof _this.cb === 'function') {
-        var q = _this.getQuery( $(_this.el).val() );
-        q.limit = 1;
-        retsly.get(_this.u, q, function(res) {
-          _this.cb(res.bundle[0]);
+        var u = [_this.u, e.meta._id].join('/');
+        retsly.get(u, {}, function(res) {
+          _this.cb(res.bundle);
         });
       }
+    });
+
+    $(this.ac.el).on('click', 'a', function(evt) {
+      evt.preventDefault();
+      evt.stopPropagation();
     });
 
     return this;

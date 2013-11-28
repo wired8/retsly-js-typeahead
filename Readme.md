@@ -21,7 +21,7 @@
     .url('/api/v1/vendor')
     .query({ type: 'mls' })
     .regex(['name', 'vendor_id'])
-    .display('name')
+    .template('<%- name %>')
     .run();
 
 ```
