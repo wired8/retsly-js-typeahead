@@ -16,7 +16,7 @@ module.exports = exports = function(retsly) {
 
   Typeahead.prototype.url = function(url) {
     this.u = [
-      'https://', retsly.getHost(), url,
+      retsly.getHost(), url,
     ].join('');
     return this;
   };
