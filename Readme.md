@@ -20,7 +20,7 @@
   var t = new Typeahead(el, fn)
     .url('/api/v1/vendor')
     .query({ type: 'mls' })
-    .regex(['name', 'vendor_id'])
+    .regex(['name', 'vendorID'])
     .template('<%- name %>')
     .run();
 
