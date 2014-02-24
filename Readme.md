@@ -12,10 +12,10 @@
 
 ```javascript
 
-  var Retsly = require('retsly-js-sdk');
-  var retsly = new Retsly(YOUR_CLIENT_ID, { debug: true });
+  var Retsly = require('retsly-sdk');
+  var retsly = new Retsly(YOUR_CLIENT_ID);
 
-  var Typeahead = require('retsly-js-typeahead')(retsly);
+  var Typeahead = require('retsly-typeahead')(retsly);
   var t = new Typeahead(el, fn)
     .url('/api/v1/vendor')
     .query({ type: 'mls' })

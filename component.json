@@ -7,11 +7,10 @@
   "dependencies": {
     "components/jquery": "1.10.2",
     "slajax/autocomplete": "*",
-    "jashkenas/underscore": "*"
+    "jashkenas/underscore": "*",
+    "Retsly/retsly-js-sdk": "*"
   },
-  "local": [
-    "retsly-js-sdk"
-  ],
+  "local": [],
   "development": {},
   "license": "MIT",
   "main": "index.js",
