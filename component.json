@@ -8,7 +8,7 @@
     "components/jquery": "1.10.2",
     "slajax/autocomplete": "*",
     "jashkenas/underscore": "*",
-    "Retsly/retsly-js-sdk": "*"
+    "retsly/retsly-js-sdk": "*"
   },
   "local": [],
   "development": {},
