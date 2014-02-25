@@ -1,5 +1,5 @@
 {
-  "name": "retsly-js-typeahead",
+  "name": "retsly-typeahead",
   "repo": "Retsly/retsly-js-typeahead",
   "description": "A typeahead component built on Retsly",
   "version": "0.0.1",
@@ -19,6 +19,10 @@
     "templates/template.js"
   ],
   "styles": [
-    "style.css"
-  ]
+    "styles/style.css"
+  ],
+  "development": {
+    "timoxley/assert": "*",
+    "visionmedia/mocha": "1.14.0"
+  }
 }

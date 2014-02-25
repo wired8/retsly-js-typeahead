@@ -1,14 +1,21 @@
 
-build: components index.js retsly-js-typeahead.css template.js
+build: components template
 	@component build --dev
 
-template.js: template.html
-	@component convert $<
+template:
+	@component convert templates/template.html
 
-components: component.json
+components: component.json template
 	@component install --dev
 
-clean:
-	rm -fr build components template.js
+dist: component.json template
+	component install
+	component build
 
-.PHONY: clean
+test: build
+	@mocha-phantomjs test/test.html
+
+clean:
+	rm -fr build components templates/template.js
+
+.PHONY: clean test
