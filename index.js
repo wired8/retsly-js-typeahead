@@ -5,6 +5,10 @@ var $ = require('jquery')
 
 module.exports = exports = function(retsly) {
 
+
+  if(typeof retsly === 'undefined')
+    throw new Error('retsly-js-typeahead requires an instantiated retsly object');
+
   function Typeahead(el, cb) {
     if(!$(el).length)
       throw new Error('retsly-js-typeahead could not find the specified dom element.');
