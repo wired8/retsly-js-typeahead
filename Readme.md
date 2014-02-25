@@ -1,4 +1,4 @@
-# retsly-js-typeahead
+# retsly-js-typeahead [![wercker status](https://app.wercker.com/status/4ee7eee158d00030709f3b75b0cc7c95/s/ "wercker status")](https://app.wercker.com/project/bykey/4ee7eee158d00030709f3b75b0cc7c95)
 
   A typeahead component built on the Retsly API.
 
