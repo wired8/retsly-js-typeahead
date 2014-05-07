@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "component/each": "0.2.3",
+    "component/emitter": "1.1.2",
+    "component/inherit": "0.0.3",
+    "component/jquery": "1.9.1",
+    "component/props": "1.1.1",
+    "component/to-function": "2.0.0",
+    "component/type": "1.0.0",
+    "components/jquery": "1.10.2",
+    "forbeslindesay/ajax": "0.0.2",
+    "jashkenas/underscore": "1.6.0",
+    "retsly/autocomplete": "0.0.1",
+    "retsly/dropdown": "0.0.2",
+    "retsly/retsly-js-sdk": "0.2.1",
+    "retsly/socket.io-client": "0.9.16",
+    "segmentio/extend": "0.0.1",
+    "stagas/menu": "0.2.0",
+    "stagas/viewport": "0.1.0",
+    "timoxley/assert": "0.0.1",
+    "visionmedia/mocha": "1.12.1"
+  }
+}
