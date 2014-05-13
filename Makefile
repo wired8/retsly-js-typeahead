@@ -13,7 +13,7 @@ dist: component.json template
 	component build
 
 test: build
-	@mocha-phantomjs test/test.html
+	@mocha-phantomjs --ignore-ssl-errors=true test/test.html
 
 clean:
 	rm -fr build components templates/template.js
