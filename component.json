@@ -2,13 +2,13 @@
   "name": "retsly-typeahead",
   "repo": "Retsly/retsly-js-typeahead",
   "description": "A typeahead component built on Retsly",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": [],
   "dependencies": {
     "components/jquery": "1.10.2",
     "retsly/autocomplete": "*",
     "jashkenas/underscore": "*",
-    "retsly/retsly-js-sdk": "*"
+    "retsly/retsly-js-sdk": "0.3.2"
   },
   "local": [],
   "development": {},
