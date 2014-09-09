@@ -3,7 +3,7 @@
  * Dependencies
  */
 var assert = require('assert');
-var Retsly = require('retsly-sdk');
+var Retsly = require('retsly-js-sdk');
 
 // don't log debugs
 Retsly.debug = false;
