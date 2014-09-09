@@ -1,14 +1,11 @@
 
-build: components template
+build: components
 	@component build --dev
 
-template:
-	@component convert templates/template.html
-
-components: component.json template
+components: component.json
 	@component install --dev
 
-dist: component.json template
+dist: component.json
 	component install
 	component build
 
@@ -16,6 +13,6 @@ test: build
 	@mocha-phantomjs test/test.html
 
 clean:
-	rm -fr build components templates/template.js
+	rm -fr build components
 
 .PHONY: clean test

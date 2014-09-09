@@ -15,11 +15,13 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": [
-    "index.js",
-    "templates/template.js"
+    "index.js"
   ],
   "styles": [
     "styles/style.css"
+  ],
+  "templates":[
+    "templates/template.html"
   ],
   "development": {
     "timoxley/assert": "*",
