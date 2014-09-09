@@ -12,8 +12,8 @@
 
 ```javascript
 
-  var Retsly = require('retsly-sdk');
-  var retsly = new Retsly(YOUR_CLIENT_ID);
+  var Retsly = require('retsly-js-sdk');
+  var retsly = new Retsly(CLIENT_ID, BROWSER_TOKEN);
 
   var Typeahead = require('retsly-typeahead')(retsly);
   var t = new Typeahead(el, fn)
