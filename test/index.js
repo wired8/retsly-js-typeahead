@@ -45,11 +45,3 @@ test('can be instantiated with an el', function() {
     var t = new T({});
   });
 });
-
-suite('Typeahead#url');
-test('builds an https api url properly', function() {
-  var r = Retsly.create('xxx','xxx');
-  var T = require('retsly-js-typeahead')(r);
-  var t = new T({});
-  assert.equal(t.url('/api/v1/listing/sandicor.json').u,'https://rets.io:443/api/v1/listing/sandicor.json');
-});
