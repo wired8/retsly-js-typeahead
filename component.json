@@ -6,7 +6,7 @@
   "keywords": [],
   "dependencies": {
     "components/jquery": "1.10.2",
-    "retsly/autocomplete": "*",
+    "retsly/autocomplete": "0.0.2",
     "jashkenas/underscore": "*",
     "retsly/retsly-js-sdk": "0.5.0"
   },
