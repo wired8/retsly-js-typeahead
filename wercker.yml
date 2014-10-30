@@ -8,7 +8,7 @@ build:
     - script:
         name: github auth
         code: |
-          export GITHUB_USERNAME=eebed5d6045c45b9cc8fbcb93b282dcaa9fc6ff3
+          export GITHUB_USERNAME=51b5e5a47ea024cb9af228039f1187d94e0055e1
           export GITHUB_PASSWORD=x-oauth-basic
     - npm-install:
         options: -gf component@1.0.0-rc6 mocha-phantomjs
