@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* Override getDomain for demo */
   retsly.getDomain = function () {
-    return 'https://dev.rets.io:443';
+    return 'https://stg.rets.io:443';
   };
 
   var t = new Typeahead(document.getElementById('foobar'), fn)
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
       .query({ type: 'mls' })
       .regex(['name', 'vendorID'])
       .placeholder('Please choose a value')
-      .template('<a data-hook="id"><span>Item: </span><span data-hook="name"></span></a>')
+      .template('<a data-hook="id"><span data-hook="name"></span></a>')
       .run();
 
   document.querySelector('body').appendChild(t.ac.el);

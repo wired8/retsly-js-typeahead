@@ -15,7 +15,7 @@
   ```bash
   $ npm install retsly-js-typeahead
   ```
-## API
+## component API
 
 ```javascript
 
@@ -32,12 +32,43 @@
 
 ```
 
+## browserify API
+
+  The browserify version of the typeahead control differs in that it uses [ampersandjs](https://ampersandjs.com/learn/templates) template views rather than underscorejs.
+
+```javascript
+
+   var Retsly = require('retsly-js-sdk');
+   var retsly = new Retsly(CLIENT_ID, BROWSER_TOKEN);
+
+   var Typeahead = require('retsly-typeahead')(retsly);
+   var t = new Typeahead(el, fn)
+     .url('/api/v1/vendor')
+     .query({ type: 'mls' })
+     .regex(['name', 'vendorID'])
+     .placeholder('Please choose a value')
+     .template('<a data-hook="id"><span data-hook="name"></span></a>')
+     .run();
+```
+
+## browserify demo
+
+```bash
+
+   npm install
+   npm run demo
+   open browser -> http://localhost:9966/
+
+```
+
+
+
 
 ## License
 
 (The MIT License)
 
-Copyright (c) 2014 Retsly Software Inc <support@rets.ly>
+Copyright (c) 2015 Retsly Software Inc <support@rets.ly>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

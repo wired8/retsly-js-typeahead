@@ -25,6 +25,6 @@
   ],
   "development": {
     "timoxley/assert": "*",
-    "visionmedia/mocha": "1.14.0"
+    "mochajs/mocha": "*"
   }
 }
