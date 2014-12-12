@@ -1,5 +1,5 @@
 
-var AutoCompleteView = require('../ampersand-autocomplete-view'),
+var AutoCompleteView = require('ampersand-autocomplete-view'),
     _ = require('underscore'),
     collection = require('ampersand-collection');
 
