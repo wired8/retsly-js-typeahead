@@ -6,12 +6,15 @@ var $ = require('jquery')
 module.exports = exports = function(retsly) {
 
 
-  if(typeof retsly === 'undefined')
+  if(typeof retsly === 'undefined') {
     throw new Error('retsly-js-typeahead requires an instantiated retsly object');
+  }
+
 
   function Typeahead(el, cb) {
-    if(!$(el).length)
+    if(!$(el).length) {
       throw new Error('retsly-js-typeahead could not find the specified dom element.');
+    }
     this.q = {};
     this.el = $(el)[0];
     this.cb = cb;
@@ -43,7 +46,7 @@ module.exports = exports = function(retsly) {
     });
     this.q = _this.q;
     return this.q;
-  }
+  };
 
   Typeahead.prototype.template = function(t) {
     this.t = t;
@@ -84,7 +87,7 @@ module.exports = exports = function(retsly) {
     });
 
     return this;
-  }
+  };
 
   return Typeahead;
-}
+};
